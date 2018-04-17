@@ -110,6 +110,14 @@ var Terminal = (function () {
 			this._output.appendChild(newLine)
 		}
 
+		this.printWithOptions = function (message, options) {
+			var newLine = document.createElement('div')
+			newLine.textContent = message
+			newLine.style.color = (options.color ? options.color : 'white')
+			newLine.style.fontStyle = (options.italic ? 'italic' : 'normal')
+			newLine.style.fontWeight = (options.bold ? 'bold' : 'normal')
+			this._output.appendChild(newLine)
+		}
 		this.input = function (message, callback) {
 			promptInput(this, message, PROMPT_INPUT, callback)
 		}
