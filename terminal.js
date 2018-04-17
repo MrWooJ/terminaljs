@@ -1,7 +1,6 @@
 /*! terminal.js v2.0 | (c) 2014 Erik Österberg | https://github.com/eosterberg/terminaljs */
 
 var Terminal = (function () {
-	// PROMPT_TYPE
 	var PROMPT_INPUT = 1, PROMPT_PASSWORD = 2, PROMPT_CONFIRM = 3
 
 	var fireCursorInterval = function (inputField, terminalObj) {
@@ -94,9 +93,9 @@ var Terminal = (function () {
 
 		this._innerWindow = document.createElement('div')
 		this._output = document.createElement('p')
-		this._inputLine = document.createElement('span') //the span element where the users input is put
+		this._inputLine = document.createElement('span')
 		this._cursor = document.createElement('span')
-		this._input = document.createElement('p') //the full element administering the user input, including cursor
+		this._input = document.createElement('p')
 
 		this._shouldBlinkCursor = true
 
