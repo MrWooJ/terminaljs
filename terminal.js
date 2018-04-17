@@ -118,6 +118,32 @@ var Terminal = (function () {
 			newLine.style.fontWeight = (options.bold ? 'bold' : 'normal')
 			this._output.appendChild(newLine)
 		}
+
+		this.printArray = function (messageArray, sameLine) {
+			var newLine = document.createElement('div')
+			for (var i = 0; i < messageArray.length; i++) {
+				var model = messageArray[i]
+				if (sameLine) {
+					var span = document.createElement('span')
+					span.textContent = model.message
+					span.style.color = model.color
+					span.style.fontStyle = (model.italic ? 'italic' : 'normal')
+					span.style.fontWeight = (model.bold ? 'bold' : 'normal')
+					newLine.appendChild(span)
+				}
+				else {
+					var line = document.createElement('div')
+					line.textContent = model.message
+					line.style.color = model.color	
+					line.style.fontStyle = (model.italic ? 'italic' : 'normal')
+					line.style.fontWeight = (model.bold ? 'bold' : 'normal')
+					this._output.appendChild(line)
+				}
+			}
+			if (sameLine) 
+				this._output.appendChild(newLine)
+		}
+
 		this.input = function (message, callback) {
 			promptInput(this, message, PROMPT_INPUT, callback)
 		}
