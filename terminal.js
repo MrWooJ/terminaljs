@@ -182,6 +182,10 @@ var Terminal = (function () {
 			this.html.style.background = col
 		}
 
+		this.setBoxShadow = function (shadowStatement) {
+			this.html.style.boxShadow = shadowStatement
+		}
+
 		this.setWidth = function (width) {
 			this.html.style.width = width
 		}
@@ -207,6 +211,7 @@ var Terminal = (function () {
 		this.setWidth('100%')
 		this.setHeight('100%')
 
+		this.html.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)'
 		this.html.style.fontFamily = 'Monaco, Courier'
 		this.html.style.margin = '0'
 		this._innerWindow.style.padding = '10px'
