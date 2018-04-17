@@ -164,6 +164,10 @@ var Terminal = (function () {
 			setTimeout(callback, milliseconds)
 		}
 
+		this.setBorderRadius = function (radius) {
+			this.html.style.borderRadius = radius
+		}
+
 		this.setTextSize = function (size) {
 			this._output.style.fontSize = size
 			this._input.style.fontSize = size
